@@ -1,0 +1,99 @@
+# Machine réalisant une addition de deux nombres au format binaire (le résultat et les arguments sont écrits "à l'envers")
+#
+# Symbole blanc :
+B
+
+#Quadruplets
+
+#Mise en place des marqueurs
+q0IGq0 #On place des marqueurs pour délimiter les 2 nombres de même taille en arguments (n1 et n2) et là où sera écrit le résultat
+q0OGq0
+q0BXq1 #Le 1er marqueur est positionné
+q1XGq1
+q1IGq1
+q1OGq1
+q1BYq2 #Le 2ème marqueur est positionné
+
+#Retour au début de la séquence
+q2YDq2
+q2IDq2
+q2ODq2
+q2XDq2
+q2RDq2 #Utile pour la suite (le marqueur R représente une retenue)
+q2BGq3
+
+#Initialisation de la lecture de n1
+q3OBq4 #Le 1er symbole lu est remplacé par un blanc
+q3IBq5 #Rq : blocage si le symbole lu est X (n1 est vide)
+
+#Déplacement vers la séquence n2
+q4IGq4
+q4OGq4
+q4BGq4 #(Lorsque le symbole lu a été réécrit)
+q5IGq5
+q5OGq5
+q5BGq5
+
+#Lecture du 1er symbole de n2 et calcul du digit a écrire
+q4XGq6 #Préparation à la lecture de n2
+q5XGq7
+q6XGq6 #On traverse les X
+q7XGq7
+q6OXq8 #Le 1er symbole lu de n2 est remplacé par X
+q6IXq9
+q7OXq9
+q7IXq10
+
+#Parcours de n2 jusqu'au résultat
+q8IGq8 #Traversée de la séquence de n2 (et du marqueur Y, et du marqueur X qui a remplacé le symbole lu)
+q8OGq8
+q8YGq8
+q8XGq8
+q9IGq9
+q9OGq9
+q9YGq9
+q9XGq9
+q10IGq10
+q10OGq10
+q10YGq10
+q10XGq10
+
+#Ecriture du digit du résulat
+q8BOq2 #Ecriture du résultat puis on retourne au début de la séquence
+q8RIq2
+q9BIq2
+q9ROq11
+q10BOq11
+q10RIq11
+
+#Ecriture de la retenue (si nécessaire)
+q11BRq2
+q11OGq11
+q11IGq11
+
+#Suppression des marqueurs (Rq : il peut rester une retenue)
+q3XBq12
+q12XBq12
+q12BGq12
+q12YBq13
+q13BGq14
+q14IGq14
+q14OGq14
+q14RIq14
+
+
+
+#Description instantanée initiale :
+# BBq0IOIBOOIB
+#Bq0OBO
+#Bq0IBI
+#Bq0OOOOBOOOO
+#Bq0OOOOBIIII
+#Bq0IOIIOBOOOOI
+#Bq0IOIIOOIIIIBIIOIOOIOIO
+#Bq0IIIIIIIIIIBIIIIIIIIII
+#592 + 586 + 185 + 134 + 134 + 34 + 29
+#Bq0B
+#Bq0OBOOOO
+#Bq0OOOOBI
+#Bq0IIBIIOOOI

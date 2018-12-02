@@ -1,0 +1,73 @@
+#8 Etats
+B
+
+# Seulement pour I / O
+# Q0 Q8 Q9 Q10 Q11
+# Seulement pour K
+# Q0 Q11
+# Seulement pour B
+#
+# Pour I / O & B
+# Q2 Q3 Q4
+# Pour I / O & B & K
+# Q1 Q5 Q6 Q7
+#K change et rencontre B - fini
+Q0OKQ0
+Q0IKQ1
+Q0KGQ1
+Q1KGQ2
+Q1OGQ1
+Q1IGQ1
+Q2OGQ2
+Q2IGQ2
+Q1BGQ3
+Q2BGQ4
+#Q3 - 0 *
+#Q4 - 1 *
+Q3BGQ3
+Q4BGQ4
+#Q5	- 0 - Pas de porter
+#Q6	- 1 - Pas de porter
+#Q7	- 0 - Porter
+Q3OBQ5
+Q3IBQ6
+Q4OBQ6
+Q4IBQ7
+Q5BDQ5
+Q6BDQ6
+Q7BDQ7
+Q5ODQ5
+Q5IDQ5
+Q6ODQ6
+Q6IDQ6
+Q7ODQ7
+Q7IDQ7
+#Q8 - Nouveau debut - Pas de porter
+#Q9 - Nouveau debut - Porter
+Q5KOQ8
+Q6KIQ8
+Q7KOQ9
+# On regarde le prochain si on a besoin de porter
+Q9OGQ10
+# Si pas besoin de porter
+Q8OGQ0
+Q8IGQ0
+# Si le procain est O, on le porte a I.
+Q10OIQ0
+# Si le prochain est B, on remplace par I.
+Q10BIQ11
+# Si le procain est I, on le porte a I.
+Q10IYQ0
+
+# Test samples :
+# Pas de porter
+BQ0OIOBIOO
+# Porte + O & Pas plus
+# BQ0OIOBIIO
+# Porte + O & Plus
+# BQ0OIOBIII
+# Porte + O & Espace & Plus
+# BQ0OIOIBIIOI
+# Porte + I
+# BQ0OIIBIIO
+

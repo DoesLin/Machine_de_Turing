@@ -1,0 +1,59 @@
+
+# Seulement pour I / O
+# Q6 Q7 Q8 Q9
+# Seulement pour K
+# Q8 Q9
+# Seulement pour B
+#
+# Pour I / O & B
+# Q0 Q1 Q2 Q3 Q4 Q5 Q10 Q11
+# Pour I / O & B & K
+# Q10
+#K change et rencontre B - fini
+
+Q0OBQ0
+Q0IBQ1
+Q0BGQ2
+Q1BGQ3
+Q2OGQ2
+Q2IGQ2
+Q3OGQ3
+Q3IGQ3
+#Q4 - 0 *
+#Q5 - 1 *
+Q2BGQ4
+Q3BGQ5
+Q4BGQ4
+Q5BGQ5
+#Q6	- 0 - Pas de porter
+#Q7	- 0 - Porter
+Q4OOQ6
+Q4IIQ6
+Q5OIQ6
+Q5IOQ7
+# Prochain calcul
+#Q8 - Nouveau debut - Pas de porter
+#Q9 - Nouveau debut - Porter
+Q6OGQ8
+Q6IGQ8
+Q7OGQ9
+Q7OGQ9
+# Si pas besoin de porter
+Q8OXQ8
+Q8IYQ8
+#X - 0 *
+#Y - 1 *
+Q8XDQ10
+Q8YDQ10
+Q10ODQ10
+Q10IDQ10
+Q10BDQ11
+Q11ODQ11
+Q11IDQ11
+Q11BGQ0
+
+
+# Si besoin de porter
+# Si le procain est O, on le porte a I.
+# Si le procain est I, on le porte a I.
+# Si le prochain est B, on remplace par I.

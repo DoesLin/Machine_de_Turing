@@ -1,0 +1,146 @@
+#machine a additionner deux nombres binaires (exam du 23 decembre 2007)
+#
+#symbole pour le blanc
+B
+
+#quadruplets
+q0OBq1#i=0
+q1BGq2
+q2OGq2
+q2IGq2
+q2BGq3#On arrive aux B
+q3BGq3
+q3OBq4#j=0
+q4BGq5
+q5OGq5
+q5IGq5
+q5BGq6#On arrive au 2eme B
+q6OGq6
+q6IGq6
+q6BOq7#k=0
+q7ODq7
+q7IDq7
+q7BDq8#On reviens au 2eme B
+q8ODq8
+q8IDq8
+q8BDq9
+q9BDq9
+q9ODq10
+q9IDq10
+q10ODq10
+q10IDq10
+q10BGq0
+
+
+q3IBq11#j=1
+q11BGq12
+q12OGq12
+q12IGq12
+q12BGq13#On arrive au 2eme B
+q13OGq13
+q13IGq13
+q13BIq14#k=1
+q14ODq14
+q14IDq14
+q14BDq15#On reviens au 2eme B
+q15ODq15
+q15IDq15
+q15BDq16
+q16BDq16
+q16ODq17
+q16IDq17
+q17ODq17
+q17IDq17
+q17BGq0
+
+
+q0IBq18#i=1
+q18BGq19
+q19OGq19
+q19IGq19
+q19BGq20#On arrive aux B
+q20BGq20
+q20OBq21#j=0
+q21BGq22
+q22OGq22
+q22IGq22
+q22BGq23#On arrive au 2eme B
+q23OGq23
+q23IGq23
+q23BIq24#k=1
+q24ODq24
+q24IDq24
+q24BDq25#On reviens au 2eme B
+q25ODq25
+q25IDq25
+q25BDq26
+q26BDq26
+q26ODq27
+q26IDq27
+q27ODq27
+q27IDq27
+q27BGq0
+
+q20IBq21#j=0
+q21BGq22
+q22OGq22
+q22IGq22
+q22BGq23#On arrive au 2eme B
+q23OGq23
+q23IGq23
+q23BIq24#k=1
+q24ODq24
+q24IDq24
+q24BDq25#On reviens au 2eme B
+q25ODq25
+q25IDq25
+q25BDq26
+q26BDq26
+q26ODq27
+q26IDq27
+q27ODq27
+q27IDq27
+q27BGq0
+
+q20IBq28#j=1
+q28BGq29
+q29OGq29
+q29IGq29
+q29BGq30#On arrive au 2eme B
+q30OGq30
+q30IGq30
+q30BOq31#k=0 et on retiens
+q31ODq31
+q31IDq31
+q31BDq32#On reviens au 2eme B
+q32ODq32
+q32IDq32
+q32BDq33
+q33BDq33
+q33ODq34
+q33IDq34
+q34ODq34
+q34IDq34
+q34BGq35
+
+
+
+
+
+#description instantannee initiale
+#état initial : q0 (devant le symbole du ruban sur lequel est placé la tête de L/E)
+#attention il faut au moins un symbole devant l'etat initial
+#Bq0OOIBOIIBBBBB
+
+#Bq0OBO
+#Bq0IBI
+#Bq0OOOOBOOOO
+#Bq0OOOOBIIII
+#Bq0IOIIOBOOOOI
+#Bq0IOIIOOIIIIBIIOIOOIOIO
+#Bq0IIIIIIIIIIBIIIIIIIIII
+#592 + 586 + 185 + 134 + 134 + 34 + 29
+Bq0B
+#Bq0OBOOOO
+#Bq0OOOOBI
+#Bq0IIBIIOOOI

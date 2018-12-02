@@ -1,0 +1,115 @@
+# Machine à calculer l'addition binaire
+# En utilisant : 
+# 10	Etats 
+# 3	Marqueurs supplémentaires
+# 41	Quadruplets
+#
+# Auteur : Yongda LIN
+# 
+# Symbole pour le blanc
+B
+
+# Etats
+# Pour I / O & B
+# Q1 Q2 Q3 Q4
+# Pour I / O & X / Y
+# Q0 Q10
+# Pour I / O & B &  X / Y
+# Q5 Q6 Q3 Q4
+# Etat de fini
+# Q9
+
+# Marqueurs
+# X	- 0 * - Pas de retenue
+# Y	- 1 * - Pas de retenue
+# K	- 1 * - Retenue
+
+# Quadruplets
+# Q0	- Nouveau début - Pas de retenue
+Q0OXQ0
+Q0IYQ0
+Q0XGQ1
+Q0YGQ1
+# Q10	- Nouveau début - Retenir
+# Retenir + 0
+Q10OYQ0
+Q10XGQ1
+Q10YGQ1
+# Retenir + 1
+Q10IKQ1
+Q1KGQ1
+Q3KOQ8
+Q5KOQ8
+Q4KIQ8
+Q6KIQ8
+# Retenir + B - Cas de finir
+Q10BIQ9
+# A droit
+Q1OGQ1
+Q1IGQ1
+Q1BGQ2
+Q2BGQ2
+# Q3 Q5	- 0
+# Q4 Q6	- 1
+Q2OBQ3
+Q2IBQ4
+Q3BDQ3
+Q4BDQ4
+Q3ODQ5
+Q3IDQ5
+Q4ODQ6
+Q4IDQ6
+Q5ODQ5
+Q5IDQ5
+Q6ODQ6
+Q6IDQ6
+# Q7	- Pas de retenue
+# Q8	- Retenue
+# Si pas besoin de retenue
+Q5XOQ7
+Q5YIQ7
+Q6XIQ7
+Q7OGQ0
+Q7IGQ0
+# Si besoin de retenue
+Q4YOQ8
+Q6YOQ8
+Q8OGQ10
+Q8IGQ10
+# Cas de finir
+Q3XOQ9
+Q3YIQ9
+Q4XIQ9
+
+# Etat initial & Description instantannée initiale
+# Bib Test			- OOOIIOOOIOI
+# BQ0IOIIOOIIIIBIIOIOOIOIO
+
+# Test samples :
+# Pas de retenue		- IIO
+# BQ0OIOBIOO
+# Retenir + O & Pas de plus	- IOI
+# BQ0OIOBIIO
+# Retenir + O & Plus		- IOOI
+# BQ0OIOBIII
+# Retenir + O & Espace & Plus 	- IOIOI
+# BQ0OIOIBIIOI
+# Retenir + I 			- IOOI
+# BQ0OIIBIIO
+# Retenir + I  & Plus		- IOOOI
+# BQ0OIIIBIIOO
+# 				- OIII
+# BQ0IIIBIII
+
+#Bq0OBO
+#Bq0IBI
+#Bq0OOOOBOOOO
+#Bq0OOOOBIIII
+#Bq0IOIIOBOOOOI
+#Bq0IOIIOOIIIIBIIOIOOIOIO
+#Bq0IIIIIIIIIIBIIIIIIIIII
+#7+9+55+55+79+261+261
+#Bq0B
+#Bq0OBOOOO
+#Bq0OOOOBI
+Bq0IIBIIOOOI
